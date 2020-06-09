@@ -1,0 +1,11 @@
+How to install:
+1. download kafka from https://kafka.apache.org/downloads
+2. unzip and update cnfig files of zookeeper and server configuration
+3. Update 'Path' Environment variable with kafka bin/windows path
+
+command to start zookeeper:    zookeeper-server-start.bat E:\Technical\kafka_2.13-2.5.0\config\zookeeper.properties
+command to start kafka:    kafka-server-start.bat E:\Technical\kafka_2.13-2.5.0\config\server.properties
+command to create a topic: kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic firsttopic
+command to check all the topics available: kafka-topics.bat --list --zookeeper localhost:2181
+command to create a producer: kafka-console-producer.bat --broker-list localhost:9092 --topic firsttopic
+command to create a consumer: kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic firsttopic --from-beginning
